@@ -33,6 +33,7 @@ pub struct Settings {
     pub time_zone: Tz,
     pub formatting: Formatting,
     pub theme: String,
+    pub input_info: Option<InputInfo>,
 }
 
 impl Settings {
@@ -316,6 +317,18 @@ impl Field {
 
 // ---
 
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq, Copy)]
+#[serde(rename_all = "kebab-case")]
+pub enum InputInfo {
+    Auto,
+    None,
+    Minimal,
+    Compact,
+    Full,
+}
+
+// ---
+
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "kebab-case")]
 pub struct Formatting {
@@ -438,7 +451,7 @@ mod tests {
             assert_eq!(settings.concurrency, None);
             assert_eq!(settings.time_format, "%b %d %T.%3N");
             assert_eq!(settings.time_zone, chrono_tz::UTC);
-            assert_eq!(settings.theme, "universal");
+            assert_eq!(settings.theme, "uni");
         };
 
         let settings: &'static Settings = Default::default();
@@ -458,7 +471,7 @@ mod tests {
         );
         assert_eq!(settings.time_format, "%b %d %T.%3N");
         assert_eq!(settings.time_zone, chrono_tz::UTC);
-        assert_eq!(settings.theme, "universal");
+        assert_eq!(settings.theme, "uni");
     }
 
     #[test]

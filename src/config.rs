@@ -67,7 +67,7 @@ impl Loader {
         }
     }
 
-    fn system(&self) -> impl Iterator<Item = Source> {
+    fn system(&self) -> impl Iterator<Item = Source> + use<> {
         self.dirs
             .as_ref()
             .map(|dirs| dirs.system_config_dirs.clone())
@@ -76,7 +76,7 @@ impl Loader {
             .map(|dir| SourceFile::new(&Self::config(&dir)).required(false).into())
     }
 
-    fn user(&self) -> impl Iterator<Item = Source> {
+    fn user(&self) -> impl Iterator<Item = Source> + use<> {
         self.dirs
             .as_ref()
             .map(|dirs| SourceFile::new(&Self::config(&dirs.config_dir)).required(false).into())
@@ -132,7 +132,7 @@ mod tests {
 
     #[test]
     fn test_default() {
-        assert_eq!(default().theme, "universal");
+        assert_eq!(default().theme, "uni");
     }
 
     #[test]

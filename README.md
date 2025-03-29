@@ -1,5 +1,7 @@
 # hl [![Build Status][ci-img]][ci] [![Coverage Status][cov-img]][cov] [![Release][release-img]][release]
 
+[![banner](doc/banner.svg)](#screenshot)
+
 High-performance log viewer and processor that transforms logs in JSON and logfmt formats into a human-readable output. Built with efficiency in mind, it enables quick parsing and analysis of large log files with minimal overhead.
 
 ## Features overview
@@ -179,10 +181,15 @@ High-performance log viewer and processor that transforms logs in JSON and logfm
 
 ### Screenshot
 
-![screenshot-light](https://github.com/pamburus/hl-extra/raw/90be58af2fb91d5b5e7ce3b74c3b567611379c40/screenshot/universal/light.png#gh-light-mode-only)
-![screenshot-dark](https://github.com/pamburus/hl-extra/raw/90be58af2fb91d5b5e7ce3b74c3b567611379c40/screenshot/universal/dark.png#gh-dark-mode-only)
+<p align="center">
+    <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pamburus/hl-extra/6575d04407aa9dcca3be15e4e35c566c30a16799/screenshot/uni/dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/pamburus/hl-extra/6575d04407aa9dcca3be15e4e35c566c30a16799/screenshot/uni/light.svg" />
+    <img alt="screenshot" src="https://hl-uni.tiiny.site/dark.svg" />
+    </picture>
+</p>
 
-See other [screenshots](https://github.com/pamburus/hl-extra/tree/90be58af2fb91d5b5e7ce3b74c3b567611379c40/screenshot#readme)
+See other [screenshots](https://github.com/pamburus/hl-extra/blob/6575d04407aa9dcca3be15e4e35c566c30a16799/screenshot/README.md#current-mode)
 
 ## Features and usage
 
